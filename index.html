@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/all.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="assets/style/styles.css" rel="stylesheet">
+    <!-- <script src="assets/scripts/index.js"></script> -->
+    <title>HMI Screen</title>
+</head>
+<body>
+
+<div class="bg">
+
+    <img src="../../images/clearpack_logo.png" alt="Logo" class="logo" />
+    
+
+    <!-----------------------------------pop up Menu---------------------------------------------->
+    <nav class="menu">
+        <!-- Hidden Checkbox to Control Menu Open/Close -->
+        <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" />
+
+        <!-- Hamburger Icon -->
+        <label class="menu-open-button" for="menu-open">
+            <span class="hamburger hamburger-1"></span>
+            <span class="hamburger hamburger-2"></span>
+            <span class="hamburger hamburger-3"></span>
+        </label>
+
+        <!-- Menu Items -->
+        <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-cog"></i> </a>
+        <a href="#" class="menu-item"> <i class="fa fa-ellipsis-h"></i> </a>
+    </nav>  
+
+    <!------------------------Health Status---------------------------------------------->
+
+    <div class="container health-status-margin">
+        <div class="row text-center">
+            <div class="col-md-2">
+                <div class="card transparent-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Scanner</h5>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card transparent-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Weighing</h5>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card transparent-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Robot</h5>
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-------------------------------Fault List/ Case Orientation--------------------------------------------------->
+
+    <div class="container case-fault-container">
+        <!------------------------ Fault List and Case Orientation (Side by Side) -------------------------------->
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <ul class="list-group fault-list">
+                    <li class="list-group-item fault-heading">
+                        <div class="row">
+                            <div class="col-md-4">Pallet Id</div>
+                            <div class="col-md-4">Fault</div>
+                            <div class="col-md-4">Case Id</div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-4">P400001</div>
+                            <div class="col-md-4">Fault</div>
+                            <div class="col-md-4">C20202021</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group case-orientation">
+                    <li class="list-group-item case-orientation-heading">
+                        <div> Case Orientations</div>
+                    </li>
+                    <li class="list-group-item">
+                        <div style="text-align: center;">CS020202020</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+        <!---------------------- Case ID's Container (Below) ------------------------------------>
+        <div class="row no-gutters mt-3">
+            <div class="col-md-12">
+                <ul class="list-group conveyor-caseid">
+                    <li class="list-group-item conveyor-caseid-heading">
+                        <div>Case Id's</div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="d-flex">
+                            <input type="text" class="form-control conveyor-input" placeholder="CaseId 1" style="margin-right: 5px;">
+                            <input type="text" class="form-control conveyor-input" placeholder="CaseId 2">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <!--------------------------------------SKU, ISPalletized, Weighed--------------------------------------------------->
+
+    <div class="container mt-1">
+        <div class="row text-center sku-pallet-weigh ">
+            <div class="col-md-2 ">
+                <div class="card transparent-card">
+                    <div class="card-body">
+                        <h5 class="skucard-title ">SKU</h5>
+                        <div class="cylinder"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card transparent-card">
+                    <div class="card-body">
+                        <h5 class="skucard-title">Palletized</h5>
+                        <div class="cylinder"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="card transparent-card">
+                    <div class="card-body">
+                        <h5 class="skucard-title">Weighed</h5>
+                        <div class="cylinder"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+<!-----------------------------STOP AND CALL BUTTON------------------------------------->
+
+    <div class="container mb-5">
+        <div class="row text-center">
+            <div class="col-6">
+                <button class="btn btn-danger btn-lg">
+                    <i class="fa fa-stop" aria-hidden="true"></i> Emergency Stop
+                </button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-primary btn-lg">
+                    <i class="fa fa-phone" aria-hidden="true"></i> Call Supervisor
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+
+</div>
+
+</body>
+</html>
