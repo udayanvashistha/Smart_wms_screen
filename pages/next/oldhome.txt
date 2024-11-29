@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> SMART WMS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../../assets/style/home.style.css">
+</head>
+<body>
+    <img src="../../images/clearpack_logo.png" alt="Logo" class="logo" />
+
+  <div class="main-container">
+    <!-- Device Status Section -->
+    <div class="device-status-container">
+      <div class="status-card disconnected" id="cameraStatus">
+        <i class="fas fa-video"></i>
+        <div class="status-title">Camera</div>
+        <div class="status-value">Disconnected</div>
+      </div>
+      <div class="status-card connected" id="scannerStatus">
+        <i class="fas fa-barcode"></i>
+        <div class="status-title">Scanner</div>
+        <div class="status-value">connected</div>
+      </div>
+    </div> 
+    </div>
+
+
+    <div class="id-row-container">
+        <!-- Pallet ID -->
+        <div class="Pallet-id-container">
+          <div class="Pallet-id">
+            <i class="fas fa-box"></i> Pallet ID - P400001
+          </div>
+        </div>
+      
+        <!-- Case ID -->
+        <div class="Case-id-container">
+          <div class="Case-id">
+            <i class="fas fa-box"></i> Case ID - CS2400003838
+          </div>
+        </div>
+      </div>
+      
+
+       <!-- Serial Number -->
+       <div class="Serial-No-container">
+        <div class="Serial-No-id">
+          <i class="fas fa-box"></i>Serial Number - 1234566678560
+        </div>
+      </div>
+
+
+      <div class="action-buttons-container">
+        <!-- Emergency Call Button -->
+        <button class="emergency-button">
+          <i class="fas fa-stop"></i> Emergency Stop
+        </button>
+      
+        <!-- Call Supervisor Button -->
+        <button class="supervisor-button">
+          <i class="fas fa-phone"></i> Call Supervisor
+        </button>
+      </div>
+      
+      
+      
+
+    
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> SMART WMS</title>
+
+  <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/bootstrap/all.min.css" rel="stylesheet">
+  <link href="../../assets/bootstrap/fontawesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style/home.style.css">
+</head>
+<body>
+ 
+
+
+
+<!----------------- Device Status Section --------------------------->
+  <div class="row mb-3 mt-3 mr-0">
+    <div class="col-sm-2">
+      <img src="../../images/clearpack_logo.png" alt="Logo" class="logo pl-4" />
+      </div>
+    <div class="col-sm-5">
+      <div class="row">
+        <div class="col-sm-4 disconnected status-card ">
+          <i class="fa fa-qrcode"></i>
+          <p >Camera</p> 
+        </div>
+        <div class="col-sm-4 disconnected status-card">
+          <i class="fa fa-memory"></i>
+          <p >PLC</p> 
+        </div>
+        <div class="col-sm-4  disconnected status-card">
+          <i class="fa fa-barcode"></i>
+          <p>Hand Scanner</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-info rounded-pill btn-md bubbly-button ml-3">Camera Reset</button>
+        </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn rounded-pill btn-md  bubbly-button btn-info ml-3">Weight Reset</button>
+        </div>
+        <div class="col-sm-4">
+        <button type="button" class="btn rounded-pill btn-md  bubbly-button btn-info ">WMS Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    
+    
+ <!---------- Pallet Info -------------------------->
+ <div class="container-fluid">
+  <div class="row ml-2">
+    <div class="col-md-4">
+        <div class="Pallet-info-card">
+            <table class="table table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Part  Number</th>
+                <th scope="col">Total cases</th>
+                <th scope="col">Number of Units</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+
+
+<!----------------------- Pi Info ----------------------------->
+     <div class="col-md-5">
+        <div class="card-body Pi-info-card">
+            <table class="table table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Pi File Name</th>
+                <th scope="col">Part  Number</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Received Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>PI241127-2</td>
+                <td>MNXF3Z/A</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+            </tbody>
+            </table>
+            <div class="totals-row">
+              <span>Total Qty: <strong>0</strong></span>
+              <span>Received Qty: <strong>0</strong></span>
+              <span>Due Qty: <strong>0</strong></span>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+<!----------------------- Rejection Count Section ----------------------------->
+
+<div class="rejection-container">
+  <div class="rejection-card" id="camera-rejection-card">
+    <span class="rejection-title">Camera Rejection</span>
+    <span class="rejection-count" id="camera-rejection-count">0</span>
+  </div>
+  <div class="rejection-card" id="serial-rejection-card">
+    <span class="rejection-title">Serial Rejection</span>
+    <span class="rejection-count" id="serial-rejection-count">0</span>
+  </div>
+  <div class="rejection-card" id="server-rejection-card">
+    <span class="rejection-title">Server Rejection</span>
+    <span class="rejection-count" id="server-rejection-count">0</span>
+  </div>
+  <div class="rejection-card" id="weight-rejection-card">
+    <span class="rejection-title">Weight Rejection</span>
+    <span class="rejection-count" id="weight-rejection-count">0</span>
+  </div>
+  <div class="rejection-card" id="asn-rejection-card">
+    <span class="rejection-title">ASN Rejection</span>
+    <span class="rejection-count" id="asn-rejection-count">0</span>
+  </div>
+</div>
+
+
+<!-----------------------  Count Section ----------------------------->
+
+<div class="count-container">
+  <div class="count-card">
+    <span class="count-title">Current Pallet</span>
+    <span class="count-value" id="current-pallet">0</span>
+  </div>
+  <div class="count-card">
+    <span class="count-title">Pallet Case Count</span>
+    <span class="count-value" id="pallet-case-count">0</span>
+  </div>
+  <div class="count-card">
+    <span class="count-title">Actual Weight Cap</span>
+    <span class="count-value" id="actual-weight-cap">0</span>
+  </div>
+  <div class="count-card">
+    <span class="count-title">Total Reject Cases</span>
+    <span class="count-value" id="total-reject-cases">0</span>
+  </div>
+  <div class="count-card">
+    <span class="count-title">Infeed Product</span>
+    <span class="count-value" id="infeed-product">0</span>
+  </div>
+</div>
+
+
+
+
+    
+<!----------------------- Emergency and Call Button ----------------------------->
+      <div class="action-buttons-container">
+        <!-- Emergency Call Button -->
+        <button class="emergency-button">
+          <i class="fas fa-stop"></i> Emergency Stop
+        </button>
+      
+        <!-- Call Supervisor Button -->
+        <button class="supervisor-button">
+          <i class="fas fa-phone"></i> Call Supervisor
+        </button>
+      </div>
+      
+      
+      
+
+    
+
+
+  </div>
+</body>
+<script src="../../assets/js/custom.js"></script>
+</html>

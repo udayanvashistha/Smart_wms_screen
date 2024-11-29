@@ -1,186 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="../../assets/bootstrap/all.min.css" rel="stylesheet">
-    <link href="../../assets/bootstrap/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href="../../assets/style/styles.css" rel="stylesheet">
-    <!-- <script src="assets/scripts/index.js"></script> -->
-    <title>HMI Screen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> SMART WMS</title>
+
+  <link href="../../assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link href="../../assets/bootstrap/all.min.css" rel="stylesheet">
+  <link href="../../assets/bootstrap/fontawesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/style/home.style.css">
+  <style>
+    .table td, .table th {
+        padding: .25rem;
+    }
+  </style>
 </head>
 <body>
+ 
 
-<div class="bg">
 
-    <img src="../../images/clearpack_logo.png" alt="Logo" class="logo" />
-    
 
-    <!-----------------------------------pop up Menu---------------------------------------------->
-    <nav class="menu">
-        <!-- Hidden Checkbox to Control Menu Open/Close -->
-        <input type="checkbox" class="menu-open" name="menu-open" id="menu-open" />
-
-        <!-- Hamburger Icon -->
-        <label class="menu-open-button" for="menu-open">
-            <span class="hamburger hamburger-1"></span>
-            <span class="hamburger hamburger-2"></span>
-            <span class="hamburger hamburger-3"></span>
-        </label>
-
-        <!-- Menu Items -->
-        <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
-        <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
-        <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
-        <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
-        <a href="#" class="menu-item"> <i class="fa fa-cog"></i> </a>
-        <a href="#" class="menu-item"> <i class="fa fa-ellipsis-h"></i> </a>
-    </nav>  
-
-<!--------------------------------Health Status----------------------------------------------->
-
-    <div class="container health-status-margin">
-        <div class="row text-center">
-            <div class="col-md-2">
-                <div class="card transparent-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Scanner</h5>
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card transparent-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Weighing</h5>
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card transparent-card">
-                    <div class="card-body">
-                        <h5 class="card-title">Robot</h5>
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
+<!----------------- Device Status Section --------------------------->
+  <div class="row mb-3 mt-3 mr-0">
+    <div class="col-sm-2">
+      <img src="../../images/clearpack_logo.png" alt="Logo" class="logo pl-4" />
+      </div>
+    <div class="col-sm-5">
+      <div class="row">
+        <div class="col-sm-4 disconnected status-card ">
+          <i class="fa fa-qrcode"></i>
+          <p >Camera</p> 
         </div>
+        <div class="col-sm-4 disconnected status-card">
+          <i class="fa fa-memory"></i>
+          <p >PLC</p> 
+        </div>
+        <div class="col-sm-4  disconnected status-card">
+          <i class="fa fa-barcode"></i>
+          <p>Hand Scanner</p>
+        </div>
+      </div>
     </div>
-
-
-    <!-------------------------------Fault List/ Case Orientation--------------------------------------------------->
-
-    <div class="container case-fault-container">
-
-    <!------------------------ Fault List and Case Orientation (Side by Side) -------------------------------->
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <ul class="list-group fault-list">
-                    <li class="list-group-item fault-heading">
-                        <div class="row">
-                            <div class="col-md-4">Pallet Id</div>
-                            <div class="col-md-4">Fault</div>
-                            <div class="col-md-4">Case Id</div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-4">P400001</div>
-                            <div class="col-md-4">Fault</div>
-                            <div class="col-md-4">C20202021</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="list-group case-orientation">
-                    <li class="list-group-item case-orientation-heading">
-                        <div> Case Orientations</div>
-                    </li>
-                    <li class="list-group-item">
-                        <div style="text-align: center;">CS020202020</div>
-                    </li>
-                </ul>
-            </div>
+    <div class="col-sm-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <button type="button" class="btn btn-info rounded-pill btn-md bubbly-button ml-3">Camera Reset</button>
         </div>
+        <div class="col-sm-4">
+          <button type="button" class="btn rounded-pill btn-md  bubbly-button btn-info ml-3">Weight Reset</button>
+        </div>
+        <div class="col-sm-4">
+        <button type="button" class="btn rounded-pill btn-md  bubbly-button btn-info ">WMS Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
     
-        <!---------------------- Case ID's Container (Below) ------------------------------------>
-        <div class="row no-gutters mt-3">
-            <div class="col-md-12">
-                <ul class="list-group conveyor-caseid">
-                    <li class="list-group-item conveyor-caseid-heading">
-                        <div>Case Id's</div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="d-flex">
-                            <input type="text" class="form-control conveyor-input" placeholder="CaseId 1" style="margin-right: 5px;">
-                            <input type="text" class="form-control conveyor-input" placeholder="CaseId 2">
-                        </div>
-                    </li>
-                </ul>
-            </div>
+    
+ <!---------- Pallet Info -------------------------->
+ <div class="container-fluid">
+  <div class="row ml-2">
+    <div class="col-md-3">
+        <div class="Pallet-info-card table-responsive">
+            <div class="totals-row">
+                <p class="mt-1 "><strong>Current Pallet: P400001</strong></p>
+              </div>
+            <table class="table table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Part  No</th>
+                <th scope="col">Cases</th>
+                <th scope="col">Units</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>MNXF3Z/A</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                    <td>MNXF3Z/A</td>
+                    <td>0</td>
+                    <td>0</td>
+                    </tr>
+                <tr>
+                    <td>MNXF3Z/A</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                  
+            </tbody>
+            </table>
         </div>
     </div>
     
-    
 
-    <!--------------------------------------SKU, ISPalletized, Weighed--------------------------------------------------->
 
-    <div class="container mt-1">
-        <div class="row text-center sku-pallet-weigh ">
-            <div class="col-md-2 ">
-                <div class="card transparent-card">
-                    <div class="card-body">
-                        <h5 class="skucard-title ">SKU</h5>
-                        <div class="cylinder"></div>
-                    </div>
-                </div>
+<!----------------------- Pi Info ----------------------------->
+     <div class="col-md-4">
+        <div class="Pi-info-card">
+            <div class="totals-row">
+                <p class="mt-1 pr-2" style="border-right:2px solid rgba(71, 70, 70, 0.445);"><strong>Current Pallet: P400001</strong></p>
+                <p class="mt-1"><strong>PI No : PI2679747470</strong></p>
             </div>
-            <div class="col-md-2">
-                <div class="card transparent-card">
-                    <div class="card-body">
-                        <h5 class="skucard-title">Palletized</h5>
-                        <div class="cylinder"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="card transparent-card">
-                    <div class="card-body">
-                        <h5 class="skucard-title">Weighed</h5>
-                        <div class="cylinder"></div>
-                    </div>
-                </div>
-            </div>
+            <div class="totals-row">
+                <span>Total Qty: 0</span>
+                <span>Rec Qty: 0</span>
+                <span>Due Qty: 0</span>
+              </div>
+            <table class="table table-hover table-striped">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">Part No</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Rec Qty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>MNXF3Z/A</td>
+                <td>0</td>
+                <td>0</td>
+                </tr>
+                <tr>
+                    <td>MNXF3Z/A</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>MNXF3Z/A</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>           
+            </tbody>
+            </table>
         </div>
-    </div>
-    
-    
-
-<!-----------------------------STOP AND CALL BUTTON------------------------------------->
-
-    <div class="container mb-5">
-        <div class="row text-center">
-            <div class="col-6">
-                <button class="btn btn-danger btn-lg">
-                    <i class="fa fa-stop" aria-hidden="true"></i> Emergency Stop
-                </button>
-            </div>
-            <div class="col-6">
-                <button class="btn btn-primary btn-lg">
-                    <i class="fa fa-phone" aria-hidden="true"></i> Call Supervisor
-                </button>
-            </div>
         </div>
+
+        <div class="md-6">
+            <div class="rejection-card" >
+                <h6>Camera Rejection</h6>
+                <p>0</p>
+              </div>
+              <div class="rejection-card">
+                <h6>Serial Rejection</h6>
+                <p>0</p>
+              </div>
+              <div class="rejection-card">
+                <h6>Server Rejection</h6>
+                <p>0</p>
+              </div>
+              <div class="rejection-card">
+                <h6>Weight Rejection</h6>
+                 <p>0</p>
+              </div>
+              <div class="rejection-card">
+                <h6>ASN Rejection</h6>
+                <p>0</p>
+              </div>
+        </div>
+
+        <div class="md-6 ml-2">
+            <div class="count-card">
+                <h6>Current Pallet</h6>
+                <p>0</p>
+              </div>
+              <div class="count-card">
+                <h6>Pallet Case Count</h6>
+                <p>0</p>
+              </div>
+              <div class="count-card">
+                <h6>Actual Weight Cap</h6>
+                <p>0</p>
+              </div>
+              <div class="count-card">
+                <h6>Total Reject Cases</h6>
+                <p>0</p>
+              </div>
+              <div class="count-card">
+                <h6>Infeed Product</h6>
+                <p>0</p>
+              </div>
+
+        </div>
+        
+         
+
+    </div>
     </div>
 
-    
-    
-    
 
-</div>
+<!----------------------- Rejection Count Section ----------------------------->
 
+<!-- <div class="rejection-container">
+  <div class="rejection-card" >
+    <h6>Camera Rejection</h6>
+    <p>0</p>
+  </div>
+  <div class="rejection-card">
+    <h6>Serial Rejection</h6>
+    <p>0</p>
+  </div>
+  <div class="rejection-card">
+    <h6>Server Rejection</h6>
+    <p>0</p>
+  </div>
+  <div class="rejection-card">
+    <h6>Weight Rejection</h6>
+     <p>0</p>
+  </div>
+  <div class="rejection-card">
+    <h6>ASN Rejection</h6>
+    <p>0</p>
+  </div>
+</div> -->
+
+
+<!-----------------------  Count Section ----------------------------->
+
+<!-- <div class="count-container">
+  <div class="count-card">
+    <h6>Current Pallet</h6>
+    <p>0</p>
+  </div>
+  <div class="count-card">
+    <h6>Pallet Case Count</h6>
+    <p>0</p>
+  </div>
+  <div class="count-card">
+    <h6>Actual Weight Cap</h6>
+    <p>0</p>
+  </div>
+  <div class="count-card">
+    <h6>Total Reject Cases</h6>
+    <p>0</p>
+  </div>
+  <div class="count-card">
+    <h6>Infeed Product</h6>
+    <p>0</p>
+  </div>
+</div> -->
+
+
+
+
+    
+<!----------------------- Emergency and Call Button ----------------------------->
+      <!-- <div class="action-buttons-container">
+
+        <button class="emergency-button">
+          <i class="fas fa-stop"></i> Emergency Stop
+        </button>
+      
+
+        <button class="supervisor-button">
+          <i class="fas fa-phone"></i> Call Supervisor
+        </button>
+      </div> -->
+      
+      
+      
+
+
+
+  </div>
 </body>
+<script src="../../assets/js/custom.js"></script>
 </html>

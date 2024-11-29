@@ -1,0 +1,349 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../images/bg2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.8; /* Image opacity */
+    z-index: -2;
+  }
+  
+  /* Logo styling */
+.logo {
+    height: 67px;
+  }
+  
+
+  
+  /* Status Card */
+  .status-card {
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 7px 20px rgba(0,0,0,.06);
+    text-align: center;
+  }
+  
+  .status-card i {
+    font-size: 2em;
+    margin-bottom: 8px;
+  }
+
+  .status-card p {
+    line-height: 1px;
+    font-weight: 400;
+  }
+
+  
+  /* Connected/Disconnected Styles */
+  .connected {
+    border: 2px solid #28a745;
+  }
+  
+  .connected i {
+    color: #28a745;
+  }
+  
+  .disconnected i {
+    color: #dc3545;
+  }
+  
+  .bubbly-button {
+  display: inline-block;
+  appearance: none;
+  cursor: pointer;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+}
+
+.bubbly-button:focus {
+  outline: none;
+}
+
+.bubbly-button:before,
+.bubbly-button:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.bubbly-button:active {
+  transform: scale(0.9);
+  background-color: rgba(255, 0, 130, 0.9);
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+/* Count Container */
+.count-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap; 
+}
+
+/* Individual Count Card */
+.count-card {
+  flex: 1;
+  background: rgba(34, 85, 170, 0.6); 
+  /* padding: 1rem; */
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.count-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(34, 85, 170, 0.8); /* Darker blue on hover */
+}
+
+/* Count Title Styling */
+.count-title {
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+/* Count Value Styling */
+.count-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00ff00; /* Green for counts */
+}
+
+/* Rejection Container */
+.rejection-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Individual Rejection Card */
+.rejection-card {
+  flex: 1;
+  background: rgba(112, 204, 161, 0.342);
+  /* padding: 1rem; */
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(15, 15, 15, 0.7);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.rejection-card:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Rejection Title */
+.rejection-title {
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+/* Rejection Count */
+.rejection-count {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffc107; 
+}
+
+
+
+
+
+
+   /* Pallet Info */
+
+  .Pallet-info-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+  }
+   
+  .thead-dark th {
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #f1f3f5;
+  }
+
+/* Pi Info */
+  .Pi-info-card{
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    
+  }
+  .totals-row {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 0.90rem;
+    color: #333;
+  }
+  
+  .totals-row span {
+    font-weight: bold;
+    color: #000;
+  }
+
+
+
+  
+/* Action Buttons Container */
+.action-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 30rem; 
+  }
+  
+  /* Emergency Button */
+  .emergency-button {
+    background-color: #dc3545; 
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .emergency-button:hover {
+    background-color: #c82333;
+    transform: scale(0.5);
+  }
+  
+  /* Call Supervisor Button */
+  .supervisor-button {
+    background-color: #007bff; 
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .supervisor-button:hover {
+    background-color: #0056b3;
+    transform: scale(0.5);
+  }
+  
+  /* Icon Styling */
+  .emergency-button i,
+  .supervisor-button i {
+    font-size: 1.5rem;
+  }
+  
+  
+  
